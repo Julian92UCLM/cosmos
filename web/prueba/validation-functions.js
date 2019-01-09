@@ -74,7 +74,7 @@ $(document).ready(function() {
         var bv = $form.data('bootstrapValidator');
 
         // Use Ajax to submit form data
-        var url = 'https://script.google.com/macros/s/AKfycbzy3UKiaESk9y2ccnBkdSgCo1zxJ0Kx0qE0_eKro7QYE5yFKJVH/exec';
+        var url = 'https://script.google.com/macros/s/AKfycbxq6ecEqATwQFhk8MPtC3b_vgi_P1PwfYd8xWK4Zipt47Ye_tX3/exec';
         var redirectUrl = 'success-page.html';
         // show the loading 
         $('#postForm').prepend($('<span></span>').addClass('glyphicon glyphicon-refresh glyphicon-refresh-animate'));
