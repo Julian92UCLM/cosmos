@@ -19,23 +19,10 @@
 	</div>
 	<!-- end #menu -->
 
-	<form name="submit-to-google-sheet">
-  <input name="codigo" type="codigo" placeholder="Codigo" required>
-  
-  <button type="submit">Send</button>
+<form name="submit-to-google-sheet">
+<p>&nbsp;</p>
+<p style="text-align: center;"><input name="codigo" required="" type="codigo" placeholder="Codigo" /> <button type="submit">Enviar</button></p>
 </form>
-
-<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxpkKbcPXO9WIaAYk5PFoMvbDihZF2m2geDQpbRy0K4-W7su68g/exec'
-  const form = document.forms['submit-to-google-sheet']
-
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
-  })
-</script>
 	
 		<!-- end #sidebar -->
 		<div style="clear: both;">&nbsp;</div>
