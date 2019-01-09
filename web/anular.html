@@ -18,41 +18,24 @@
 		</ul>
 	</div>
 	<!-- end #menu -->
-	<div id="header">
-		<div id="logo">
-			<h1><a href="#">Servicio de máquinas de café</a></h1>
-		</div>
-	</div>
-	<!-- end #header -->
-	
-	< form  id = " test-form " >
+
+	<form name="submit-to-google-sheet">
+  <input name="codigo" type="codigo" placeholder="Codigo" required>
   
-  < div >
-    < etiqueta > Campo 1 </ etiqueta >
-    < input  type = " text "  name = " form_field_1 "  placeholder = " Field 1 " />
-  </ div >
+  <button type="submit">Send</button>
+</form>
 
-  < div >
-    < etiqueta > Campo 2 </ etiqueta >
-    < input  type = " text "  name = " form_field_2 "  placeholder = " Field 2 " />
-  </ div >
-  
-  < div >
-    < etiqueta > Campo 3 </ etiqueta >
-    < input  type = " text "  name = " form_field_3 "  placeholder = " Field 3 " />
-  </ div >
-  
-  < div >
-    < etiqueta > Campo 4 </ etiqueta >
-    < input  type = " text "  name = " form_field_4 "  placeholder = " Field 4 " />
-  </ div >
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxpkKbcPXO9WIaAYk5PFoMvbDihZF2m2geDQpbRy0K4-W7su68g/exec'
+  const form = document.forms['submit-to-google-sheet']
 
-  < div >
-    < button  type = " submit " id = " submit-form " > Enviar </ button >
-  </ div >
-
-</ form >
-
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
 	
 		<!-- end #sidebar -->
 		<div style="clear: both;">&nbsp;</div>
