@@ -19,22 +19,22 @@
 	</div>
 	<!-- end #menu -->
 
-< form  name = " submit-to-google-sheet " >
-  < input  name = " codigo "  type = " codigo "  placeholder = " Codigo "  required >
+<form name="submit-to-google-sheet">
+  <input name="codigo" type="codigo" placeholder="Codigo" required>
   
-  < button  type = " submit " > Enviar </ button >
-</ form >
+  <button type="submit">Send</button>
+</form>
 
-< script >
-  const  scriptURL  =  ' https://script.google.com/macros/s/AKfycbxpkKbcPXO9WIaAYk5PFoMvbDihZF2m2geDQpbRy0K4-W7su68g/exec '
-  const  forma  =  documento . formularios [ ' enviar a google-sheet ' ]
-  formulario . addEventListener ( ' submit ' , e  => {
-    e . preventDefault ()
-    fetch (scriptURL, {method :  ' POST ' , body :  new  FormData (form)})
-      . entonces ( respuesta  =>  consola . log ( ' ¡Éxito! ' , respuesta))
-      . captura ( error  =>  consola . error ( ' Error! ' , error . mensaje ))
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxpkKbcPXO9WIaAYk5PFoMvbDihZF2m2geDQpbRy0K4-W7su68g/exec'
+  const form = document.forms['submit-to-google-sheet']
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
   })
-</ script >
+</script>
 		<!-- end #sidebar -->
 		<div style="clear: both;">&nbsp;</div>
 	</div>
