@@ -38,14 +38,20 @@
 </form>
 
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxpkKbcPXO9WIaAYk5PFoMvbDihZF2m2geDQpbRy0K4-W7su68g/exec'
-  const form = document.forms['submit-to-google-sheet']
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
-  })
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxpkKbcPXO9WIaAYk5PFoMvbDihZF2m2geDQpbRy0K4-W7su68g/exec'
+    function setupListener(form) {
+	form.addEventListener('submit', e => {
+    	e.preventDefault()
+    	fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      		.then(response => console.log('Success!', response))
+      		.catch(error => console.error('Error!', error.message))
+  	})
+    }
+
+    const form = document.forms['submit-to-google-sheet']
+    const fframe = window.frames['154814944969473'].document.forms['submit-to-google-sheet']
+    setupListener(form)
+    fframe.forEach(setupListener)
 </script>
 	
 		<!-- end #sidebar -->
