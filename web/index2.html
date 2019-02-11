@@ -24,12 +24,19 @@
 
 <form name="submit-to-google-sheet">
   
-  <select name="ID_Maquina" onchange="cual()">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-   </select>
-  <input name="ID_Maquina">
+  
+  <select name="ID_Maquina" id="ID_Maquina" required>
+    <option selected value="">Elige uno...</option>
+    <option value="rock">Rock</option>
+    <option value="pop">Pop</option>
+    <option value="punk">Punk</option>
+    <option value="indie">Indie</option>
+  </select>
+  <input type="submit" value="enviar">
+
+  
+  
+ 
   <button type="submit">Send</button>
 </form>
 
