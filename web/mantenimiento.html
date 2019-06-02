@@ -24,10 +24,9 @@
 	<!-- formulario -->
 <form name="submit-to-google-sheet">
 	
-<p style="text-align: center;"><input id="ID_Maquina" name="ID_Maquina" required="" type="codigo" placeholder="N&ordm; de la maquina" /> <button type="submit">Send</button></p><input id="ID_Maquina" name="ID_Maquina" type="codigo" placeholder="Nº de la maquina" required>
+  <input id="ID_Maquina" name="ID_Maquina" type="codigo" placeholder="Nº de la maquina" required>
   
-  <button type="submit">Enviar</button>
-
+  <button type="submit">Send</button>
 </form>
 
 <script>
@@ -43,7 +42,6 @@
       		.catch(error => console.error('Error!', error.message))
   	})
     }
-
     const form = document.forms['submit-to-google-sheet']
     //const fframe = window.frames['154814944969473'].document.forms['submit-to-google-sheet']
     setupListener(form)
